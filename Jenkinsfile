@@ -14,6 +14,12 @@ pipeline {
             }
         }
 
+        stage('Archive Artifact') {
+             steps {
+                archiveArtifacts artifacts: 'dist/**', fingerprint: true
+             }
+        }
+        
         stage('Test') {
             steps {
                 echo "Test step" 
