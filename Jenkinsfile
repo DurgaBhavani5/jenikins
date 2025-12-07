@@ -6,16 +6,11 @@ pipeline {
         APP_NAME = "node-app"
         ENV = "dev"
     }
-
-    options {
-        buildName "#${BUILD_NUMBER}-${ENV}"
-    }
-
     stages {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/user/repo.git'
+                git branch: 'main', url: 'https://github.com/DurgaBhavani5/jenikins.git'
             }
         }
 
@@ -47,7 +42,7 @@ pipeline {
 
         stage('Archive Artifact') {
             steps {
-                archiveArtifacts artifacts: 'dist/**', fingerprint: true
+                archiveArtifacts artifacts: 'hi.txt', fingerprint: true
             }
         }
     }
