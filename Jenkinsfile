@@ -16,7 +16,7 @@ pipeline {
 
         stage('Archive Artifact') {
              steps {
-                archiveArtifacts artifacts: 'dist/**', fingerprint: true
+                archiveArtifacts artifacts: 'hello.txt', fingerprint: true
              }
         }
         
