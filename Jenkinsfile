@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+        script {
+            currentBuild.displayName = "Build-${BUILD_NUMBER}-${ENV}"
+        }
     stages {
         stage('Checkout') {
             steps {
