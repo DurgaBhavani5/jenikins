@@ -1,16 +1,8 @@
 # Dockerfile
-FROM node:18-alpine
+FROM python:3.11-slim
 WORKDIR /app
 
-# copy package.json and package-lock.json first for caching
-COPY package*.json ./
+# No dependencies required for simple "hello world"
+COPY . .
 
-# install deps
-RUN npm ci --only=production   # or npm install — npm ci is preferred when lockfile exists
-
-# copy rest of the application
-COPY . hello.txt
-
-# build/start if needed
-# RUN npm run build
-CMD ["node", "index.js"]      # replace with your start command
+CMD ["python", "program.py"]
