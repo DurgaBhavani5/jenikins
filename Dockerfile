@@ -1,8 +1,7 @@
-# Dockerfile
-FROM python:3.11-slim
+FROM node:18-alpine
 WORKDIR /app
-
-# No dependencies required for simple "hello world"
 COPY . .
-
-CMD ["python", "program.py"]
+RUN npm install
+CMD ["npm", "start"]
+EXPOSE 3000
+]
